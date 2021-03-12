@@ -24,10 +24,13 @@ public class Order {
 
     @OneToMany(mappedBy = "order")
     private List<OrderItem> orderItems = new ArrayList<>();
-    
+
+    @OneToOne                           //1:1에서 외래키는 order쪽에 있음.(보통 order통해서 delivery조회하니까)
+    @JoinColumn(name = "delivery_id")
     private Delivery delivery;
 
     private LocalDateTime orderDate;
 
+    @Enumerated(EnumType.STRING)
     private OrderStatus status;
 }

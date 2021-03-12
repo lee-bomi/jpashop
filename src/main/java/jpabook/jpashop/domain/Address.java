@@ -5,7 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.Embeddable;
 
-@Embeddable
+@Embeddable          //새로운 값타입을 정의
 @Getter @Setter
 public class Address {
 
